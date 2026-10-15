@@ -1,0 +1,217 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #8c6046;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    width: 100%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.formulario-cafeteria {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "nombre        producto"
+        "correo        cantidad"
+        "linea         tamano"
+        "observaciones llevar"
+        "observaciones botones";
+    gap: 15px 30px;
+    width: 100%;
+}
+
+.grupo-nombre        { grid-area: nombre; }
+.grupo-correo        { grid-area: correo; }
+.grupo-linea         { grid-area: linea; }
+.grupo-observaciones { grid-area: observaciones; }
+.grupo-producto      { grid-area: producto; }
+.grupo-cantidad      { grid-area: cantidad; }
+.grupo-tamano        { grid-area: tamano; }
+.grupo-llevar        { grid-area: llevar; }
+.contenedor-botones  { grid-area: botones; }
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #ffffff;
+}
+
+.grupo-campo input[type="text"],
+.grupo-campo input[type="email"],
+.grupo-campo select,
+.grupo-campo textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 4px;
+    border: 1px solid #777;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.grupo-campo textarea {
+    resize: vertical;
+    height: 100%;
+    min-height: 160px;
+}
+
+.input-corto {
+    max-width: 150px;
+}
+
+.linea-divisora {
+    border: none;
+    border-top: 2px solid #e1be9b;
+    margin: 10px 0;
+}
+
+.opciones-radio {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.opciones-radio label {
+    font-weight: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.grupo-llevar {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.grupo-llevar label {
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.grupo-llevar input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
+}
+
+.contenedor-botones {
+    background-color: #f3dfbf;
+    padding: 15px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.caja-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-ovalado {
+    background-color: #e6e6e6;
+    color: #222222;
+    border: 1px solid #555555;
+    border-radius: 12px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    line-height: 1.2;
+    min-width: 110px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-ovalado:hover {
+    background-color: #d8d8d8;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .formulario-cafeteria {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "nombre        producto"
+            "correo        cantidad"
+            "llevar        tamano"
+            "linea         ."
+            "observaciones btnLim"
+            "observaciones btnReg";
+        gap: 12px 25px;
+    }
+
+    .contenedor-botones {
+        display: contents;
+    }
+
+    .caja-limpiar {
+        grid-area: btnLim;
+        background-color: #f3dfbf;
+        padding: 15px;
+        border-radius: 4px;
+    }
+
+    .caja-registrar {
+        grid-area: btnReg;
+        background-color: #f3dfbf;
+        padding: 15px;
+        border-radius: 4px;
+    }
+}
+
+@media (max-width: 768px) {
+    .formulario-cafeteria {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "nombre        nombre"
+            "correo        correo"
+            "producto      llevar"
+            "cantidad      tamano"
+            "botones       botones"
+            "linea         linea"
+            "observaciones observaciones";
+        gap: 15px 15px;
+        max-width: 420px;
+    }
+
+    .opciones-radio {
+        flex-direction: row;
+        gap: 8px;
+        font-size: 13px;
+    }
+}

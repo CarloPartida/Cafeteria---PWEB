@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.contenedor-tarjeta {
+    background-color: #8c6046;
+    width: 100%;
+    max-width: 800px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.encabezado-gracias {
+    background-color: #422008;
+    color: #ffffff;
+    padding: 15px 20px;
+    margin-bottom: 25px;
+}
+
+.encabezado-gracias h1 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.encabezado-gracias p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-campo label {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.caja-valor {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 12px;
+    color: #777777;
+    font-size: 14px;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+}
+
+.campo-nombre { grid-area: nombre; }
+.campo-producto { grid-area: producto; }
+.campo-observaciones { grid-area: observaciones; }
+.campo-tamano { grid-area: tamano; }
+.campo-cantidad { grid-area: cantidad; }
+
+.caja-textarea {
+    height: 100%;
+    min-height: 160px;
+    align-items: flex-start;
+    white-space: pre-wrap;
+}
+
+@media (min-width: 651px) {
+    .grid-resumen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto;
+        gap: 20px 25px;
+        grid-template-areas:
+            "nombre        producto"
+            "observaciones tamano"
+            "observaciones cantidad";
+    }
+}
+
+@media (max-width: 650px) {
+    .grid-resumen {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        grid-template-areas:
+            "nombre"
+            "producto"
+            "tamano"
+            "cantidad"
+            "observaciones";
+    }
+    
+    .caja-textarea {
+        min-height: 140px;
+    }
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería - Formulario de Pedidos</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+    <div class="contenedor-principal">
+        <h1 class="titulo-pagina">Cafetería</h1>
+
+        <form class="formulario-cafeteria" id="pedidoForm" action="/pedido" method="POST">
+            
+            <div class="grupo-campo grupo-nombre">
+                <label for="nombre">Nombre del Cliente.</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Paul McCartney" required>
+            </div>
+
+            <div class="grupo-campo grupo-correo">
+                <label for="correo">Correo Electrónico.</label>
+                <input type="email" id="correo" name="correo" placeholder="Ej. example@gmail.com" required>
+            </div>
+
+            <div class="grupo-campo grupo-llevar">
+                <input type="checkbox" id="paraLlevar" name="paraLlevar" value="si">
+                <label for="paraLlevar">¿Para llevar?</label>
+            </div>
+
+            <hr class="linea-divisora grupo-linea">
+
+            <div class="grupo-campo grupo-observaciones">
+                <label for="observaciones">Observaciones.</label>
+                <textarea id="observaciones" name="observaciones" rows="6"></textarea>
+            </div>
+
+            <div class="grupo-campo grupo-producto">
+                <label for="producto">Selección del Producto.</label>
+                <select id="producto" name="producto" required>
+                    <option value="" disabled selected>Selecciona un Producto.</option>
+                    <option value="cafe">Café Americano</option>
+                    <option value="capuchino">Capuchino</option>
+                    <option value="latte">Latte</option>
+                </select>
+            </div>
+
+            <div class="grupo-campo grupo-cantidad">
+                <label for="cantidad">Cantidad de Producto.</label>
+                <input type="text" id="cantidad" name="cantidad" placeholder="1, 2, 3, n..." class="input-corto" required>
+            </div>
+
+            <div class="grupo-campo grupo-tamano">
+                <label>Tamaño</label>
+                <div class="opciones-radio">
+                    <label><input type="radio" name="tamano" value="chico" checked> Chico</label>
+                    <label><input type="radio" name="tamano" value="mediano"> Mediano</label>
+                    <label><input type="radio" name="tamano" value="grande"> Grande</label>
+                </div>
+            </div>
+
+            <div class="contenedor-botones">
+                <div class="caja-btn caja-limpiar">
+                    <button type="reset" class="btn-ovalado">Limpiar<br>Pedido</button>
+                </div>
+                <div class="caja-btn caja-registrar">
+                    <button type="submit" class="btn-ovalado">Registrar<br>Pedido</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script src="form.js"></script>
+</body>
+</html>

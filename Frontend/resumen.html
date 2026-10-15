@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumen del Pedido</title>
+    <link rel="stylesheet" href="resumen.css">
+</head>
+<body>
+
+    <div class="contenedor-tarjeta">
+        <header class="encabezado-gracias">
+            <h1>¡Gracias por tu compra!</h1>
+            <p>Aquí tienes el resumen de tu compra.</p>
+        </header>
+
+        <main class="grid-resumen">
+            <div class="grupo-campo campo-nombre">
+                <label>Nombre del Cliente.</label>
+                <div class="caja-valor" id="nombre"></div>
+            </div>
+
+            <div class="grupo-campo campo-producto">
+                <label>Producto.</label>
+                <div class="caja-valor" id="producto"></div>
+            </div>
+
+            <div class="grupo-campo campo-observaciones">
+                <label>Observaciones.</label>
+                <div class="caja-valor caja-textarea" id="observaciones"></div>
+            </div>
+
+            <div class="grupo-campo campo-tamano">
+                <label>Tamaño.</label>
+                <div class="caja-valor" id="tamano"></div>
+            </div>
+
+            <div class="grupo-campo campo-cantidad">
+                <label>Cantidad.</label>
+                <div class="caja-valor" id="cantidad"></div>
+            </div>
+        </main>
+    </div>
+
+    <script src="resumen.js"></script>
+</body>
+</html>
